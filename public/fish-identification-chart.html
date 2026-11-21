@@ -1,111 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-global-chrome="false">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Fish Identification Chart with Pictures: 40 Species</title>
 <meta name="description" content="Printable-style fish identification chart with pictures: 40 saltwater, freshwater and reef species with size, key ID traits and range. Filter by habitat."/>
 <link rel="canonical" href="https://www.fishcareai.com/identify/fish-identification-chart"/>
-<style>
-/* ── FishCare AI Global Navigation ─────────────────────────────────────── */
-.nb{position:sticky;top:0;z-index:100;background:rgba(5,31,50,.92);border-bottom:1px solid rgba(125,235,255,.16);box-shadow:0 16px 50px rgba(0,0,0,.28);backdrop-filter:blur(22px) saturate(1.25);-webkit-backdrop-filter:blur(22px) saturate(1.25);padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:8px;text-decoration:none}
-.fishcare-logo-img{height:36px;width:142px;object-fit:contain;display:block;filter:drop-shadow(0 10px 24px rgba(37,215,255,.22))}
-.nlinks{display:flex;align-items:center;gap:2px}
-.nl{display:flex;align-items:center;padding:7px 13px;border-radius:999px;font-weight:500;font-size:.86rem;line-height:1;color:rgba(234,251,255,.82);text-decoration:none;transition:all .15s;background:none;border:none;cursor:pointer;white-space:nowrap}
-.nl:visited{color:rgba(234,251,255,.82)}
-.nl:hover,.nl.act{color:#fff;background:rgba(125,235,255,.15);box-shadow:inset 0 0 0 1px rgba(125,235,255,.22)}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:7px;border:none;background:none}
-.hbg span{display:block;width:21px;height:2px;background:#fff;border-radius:2px;transition:all .2s}
-.hbg-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hbg-open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hbg-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:760px){
-  .nlinks{display:none;position:absolute;top:calc(100% + 4px);left:10px;right:10px;background:rgba(4,22,36,.97);border:1px solid rgba(125,235,255,.2);border-radius:18px;flex-direction:column;padding:14px;gap:4px;box-shadow:0 20px 60px rgba(0,0,0,.5);max-height:calc(100vh - 80px);overflow-y:auto}
-  .nlinks.open{display:flex}
-  .hbg{display:flex}
-  .nlinks .nl{color:rgba(234,251,255,.82);width:100%}
-  .nlinks .nl:hover,.nlinks .nl.act{color:#fff;background:rgba(125,235,255,.15);box-shadow:inset 0 0 0 1px rgba(125,235,255,.22)}
-}
-
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a1628;--card:#0f2040;--card2:#152a50;
-  --accent:#1e9aff;--accent2:#00c9a7;
-  --text:#e8f4ff;--muted:#7da8cc;--border:#1e3a60;--radius:14px;
-}
-body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
-a{color:var(--accent)}
-
-
-
-
-
-
-
-
-
-.btn-primary{background:linear-gradient(135deg,var(--accent),#0070cc);color:#fff}
-.btn-outline{background:rgba(30,154,255,.12);border:1px solid rgba(30,154,255,.3);color:var(--accent)}
-@media(max-width:700px){}
-main{max-width:960px;margin:0 auto;padding:36px 20px}
-.hero{text-align:center;padding:52px 24px 44px;background:linear-gradient(180deg,rgba(30,154,255,.07),transparent);border-radius:var(--radius);margin-bottom:40px;border:1px solid var(--border)}
-.hero h1,.hero h2{font-size:2rem;font-weight:900;color:#fff;margin-bottom:14px;line-height:1.2}
-.hero p{font-size:1rem;color:var(--muted);max-width:640px;margin:0 auto 28px}
-.try-btn{display:inline-block;padding:13px 36px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#0070cc);color:#fff;font-weight:800;font-size:1rem;text-decoration:none;box-shadow:0 8px 28px rgba(30,154,255,.35)}
-.try-btn:hover{opacity:.88}
-section.content-section{margin-bottom:40px}
-section.content-section h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-section.content-section ul{padding-left:20px;color:var(--muted);margin-bottom:12px}
-section.content-section ul li{margin-bottom:7px}
-section.content-section p{color:var(--muted);margin-bottom:10px}
-section.content-section strong{color:var(--text)}
-section.content-section em{color:#a0c0e0}
-.species-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:8px}
-.sg-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px}
-.sg-card strong{display:block;color:#fff;font-size:.95rem;margin-bottom:2px}
-.sg-card em{display:block;font-style:italic;color:var(--muted);font-size:.78rem;margin-bottom:7px}
-.sg-card p{color:var(--muted);font-size:.82rem;margin:0}
-.id-chart{width:100%;border-collapse:collapse;font-size:.83rem}
-.id-chart th{background:var(--card2);color:var(--text);padding:10px 12px;text-align:left;font-weight:700;border:1px solid var(--border)}
-.id-chart td{padding:9px 12px;border:1px solid var(--border);color:var(--muted);vertical-align:top}
-.id-chart tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.id-chart td strong{color:var(--text)}
-.id-chart td em{color:#8ab8d8;font-style:italic}
-.id-chart td.ph{padding:6px;width:150px}
-.id-chart td.ph img{display:block;width:140px;height:93px;object-fit:cover;border-radius:6px;background:var(--card2)}
-.sub-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
-.sub-charts a{display:block;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--text);font-weight:700}
-.sub-charts a small{display:block;font-weight:400;color:var(--muted);font-size:.8rem;margin-top:4px}
-.credit{font-size:.74rem;color:var(--muted);margin-top:10px}
-@media(max-width:600px){.id-chart td.ph{width:96px}.id-chart td.ph img{width:88px;height:59px}}
-.cta-banner{background:linear-gradient(135deg,rgba(30,154,255,.15),rgba(0,201,167,.1));border:1px solid rgba(30,154,255,.3);border-radius:var(--radius);padding:36px 28px;text-align:center;margin:48px 0}
-.cta-banner h3{font-size:1.4rem;font-weight:800;color:#fff;margin-bottom:10px}
-.cta-banner p{color:var(--muted);margin-bottom:22px;font-size:.95rem}
-.chart-controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.filter-btn{padding:7px 18px;border-radius:999px;background:rgba(30,154,255,.1);border:1px solid var(--border);color:var(--muted);font-size:.82rem;font-weight:600;cursor:pointer}
-.filter-btn.active{background:linear-gradient(135deg,var(--accent),#0070cc);color:#fff;border-color:transparent}
-.related-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
-.related-links span{color:var(--muted);font-size:.82rem;padding-top:6px}
-.related-links a{padding:5px 14px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:.8rem;text-decoration:none}
-.related-links a:hover{color:var(--accent);border-color:rgba(30,154,255,.4)}
-footer{text-align:center;padding:26px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--border)}
-@media(max-width:600px){.hero h1,.hero h2{font-size:1.5rem}.species-grid{grid-template-columns:1fr}}
-
-footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14);padding:48px 22px 28px;margin-top:40px}
-.ftg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;max-width:1040px;margin:0 auto 28px}
-.ftbr .logo{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:10px}
-.ftbr p{font-size:.82rem;color:rgba(125,185,220,.7);line-height:1.6}
-.ftcol h5{font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(125,185,220,.5);margin-bottom:12px}
-.ftcol a{display:block;font-size:.84rem;color:rgba(125,185,220,.75);text-decoration:none;margin-bottom:8px;transition:color .15s}
-.ftcol a:hover{color:#fff}
-.ftb{max-width:1040px;margin:0 auto 12px;font-size:.78rem;color:rgba(125,185,220,.45);border-top:1px solid rgba(125,235,255,.1);padding-top:20px}
-.ft-legal{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px}
-.ft-legal a{font-size:.76rem;color:rgba(125,185,220,.55);text-decoration:none}
-.ft-legal a:hover{color:rgba(125,185,220,.9)}
-@media(max-width:700px){.ftg{grid-template-columns:1fr 1fr}}
-@media(max-width:440px){.ftg{grid-template-columns:1fr}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.fishcareai.com/assets/site-chrome.css">
+<link rel="stylesheet" href="/identify/assets/identify.css?v=20261122">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"WebPage","@id":"https://www.fishcareai.com/identify/fish-identification-chart","url":"https://www.fishcareai.com/identify/fish-identification-chart","name":"Fish Identification Chart with Pictures: 40 Species","description":"Fish identification chart with pictures: 40 saltwater, freshwater and reef species with size, key ID traits and range.","isPartOf":{"@type":"WebSite","name":"FishCare AI","url":"https://www.fishcareai.com/"},"publisher":{"@type":"Organization","name":"FishCare AI","url":"https://www.fishcareai.com/"}},
@@ -119,28 +24,14 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
 <script defer src="https://www.fishcareai.com/assets/site-compliance.js?v=20260923-analytics"></script>
 </head>
 <body>
-<nav class="nb" id="fishcare-nav">
-  <a class="brand" href="https://www.fishcareai.com/">
-    <img class="fishcare-logo-img" src="https://www.fishcareai.com/assets/fishcare-logo.svg" alt="FishCare AI" width="142" height="36">
-  </a>
-    <div class="nlinks" id="fc-nlinks">
-    <a class="nl" href="https://www.fishcareai.com/">Home</a>
-    <a class="nl" href="https://www.fishcareai.com/guides/">Guides</a>
-    <a class="nl" href="https://www.fishcareai.com/tools/">Tools</a>
-    <a class="nl" href="https://www.fishcareai.com/species/">Encyclopedia</a>
-    <a class="nl" href="https://www.fishcareai.com/aquarium-fish-diseases/">Fish Diseases</a>
-    <a class="nl" href="https://www.fishcareai.com/identify/">Fish Identify</a>
-    <a class="nl" href="https://www.fishcareai.com/about/">About</a>
-  </div>
-  <button class="hbg hbg-btn" id="fc-hbg" aria-label="Toggle navigation" aria-expanded="false" type="button">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<nav class="nb fishcare-global-nav" id="fishcare-global-navigation" aria-label="Main navigation"><a class="brand" href="/" aria-label="FishCare AI home"><img class="fishcare-logo-img" src="/assets/fishcare-logo.svg" alt="FishCare AI" width="142" height="36"></a><div class="nlinks" id="fishcare-nlinks"><a class="nl" href="/">Home</a><a class="nl" href="/guides/">Guides</a><a class="nl" href="/species">Encyclopedia</a><a class="nl" href="/compatibility/">Compatibility</a><a class="nl" href="/fish-health/">Fish Health</a><a class="nl act" href="/identify/" aria-current="page">Fish ID</a><a class="nl" href="/about/">About</a><a class="nl nl-app-btn" href="/app/">📱 App</a></div><button type="button" class="hbg" aria-label="Open navigation menu" aria-controls="fishcare-nlinks" aria-expanded="false"><span></span><span></span><span></span></button></nav>
 
 <main>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/identify/">Fish Identifier</a> &rsaquo; <span aria-current="page">Fish Identification Chart</span></nav>
   <div class="hero">
-    <h1>Fish Identification Chart with Pictures: 40 Species by Habitat</h1>
-    <p>A visual fish identification chart you can scan in seconds: a photo of each species next to its size range, the two or three traits that separate it from look-alikes, and where it lives. Filter the chart by saltwater, freshwater or reef, or jump to the deeper habitat charts below. If you already have a photo, the AI identifier on our home page can match it against 866 species.</p>
+    <p class="eyebrow">Picture chart &middot; 40 species</p>
+    <h1><em>Fish Identification Chart with Pictures</em>: 40 Species by Habitat</h1>
+    <p>A visual fish identification chart you can scan in seconds: a photo of each species next to its size range, the two or three traits that separate it from look-alikes, and where it lives. Filter the chart by saltwater, freshwater or reef, or jump to the deeper habitat charts below. If you already have a photo, the AI identifier on our home page can name it in seconds.</p>
     <a class="try-btn" href="/identify/">📷 Identify a fish from a photo instead</a>
   </div>
 
@@ -148,7 +39,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
 <p>1. <strong>Pick the habitat first.</strong> Use the All / Saltwater / Freshwater / Reef buttons above the chart. Habitat rules out more species than any single body feature, so it is the fastest first cut.<br>
 2. <strong>Compare the picture, then the traits.</strong> Colour photos are the quickest match, but colour changes with age, sex, water and death (a mahi-mahi fades in minutes). The <em>Key ID Traits</em> column lists shape, fin and marking features that do not change.<br>
 3. <strong>Check size and range.</strong> A fish outside its normal size range or thousands of miles from its distribution is usually a different species that looks similar.<br>
-4. <strong>Still torn between two rows?</strong> <a href="/identify/">Upload the photo to the AI fish identifier</a> and it returns the top matches with a confidence score.</p>
+4. <strong>Still torn between two rows?</strong> <a href="/identify/">Upload the photo to the AI fish identifier</a> and it returns the most likely species with a confidence rating.</p>
 <h3>Deeper charts by habitat</h3>
 <div class="sub-charts">
   <a href="/identify/freshwater-fish-identification">Freshwater fish identification chart<small>Bass, trout, pike, carp, catfish, perch and more, with pictures and a trait key</small></a>
@@ -163,7 +54,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
   <button class="filter-btn" data-filter="freshwater">Freshwater</button>
   <button class="filter-btn" data-filter="reef">Reef</button>
 </div>
-<div style="overflow-x:auto">
+<div class="table-scroll">
 <table class="id-chart" id="fish-chart">
 <thead><tr><th>Photo</th><th>Species</th><th>Habitat</th><th>Size Range</th><th>Key ID Traits</th><th>Distribution</th></tr></thead>
 <tbody>
@@ -226,7 +117,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
 
   <div class="cta-banner">
     <h3>Chart narrowed it to two? Let the photo decide.</h3>
-    <p>Upload any fish photo and the AI identifier, trained on 866 species, returns the top matches with a confidence score, common names and species details.</p>
+    <p>Upload any fish photo and the AI identifier returns the most likely species with its scientific name, a confidence rating and care tips.</p>
     <a class="try-btn" href="/identify/">Upload a Fish Photo</a>
   </div>
 
@@ -236,46 +127,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
   </div>
 </main>
 
-<footer class="ft">
-  <div class="ftg">
-    <div class="ftbr">
-      <div class="logo">FishCare AI</div>
-      <p>AI fish identification and aquarium care guides for freshwater and saltwater fishkeepers.</p>
-    </div>
-    <div class="ftcol">
-      <h5>Explore</h5>
-      <a href="https://www.fishcareai.com/species/">Fish Species</a>
-      <a href="https://www.fishcareai.com/aquarium-fish-diseases/">Fish Diseases</a>
-      <a href="https://www.fishcareai.com/guides/">Guides</a>
-      <a href="https://www.fishcareai.com/tools/">Aquarium Tools</a>
-      <a href="https://www.fishcareai.com/identify/">Fish Identify</a>
-    </div>
-    <div class="ftcol">
-      <h5>Popular Tools</h5>
-      <a href="https://www.fishcareai.com/tools/fish-compatibility-checker/">Compatibility Checker</a>
-      <a href="https://www.fishcareai.com/tools/tank-size-calculator/">Tank Size Calculator</a>
-      <a href="https://www.fishcareai.com/tools/water-parameter-checker/">Water Parameters</a>
-      <a href="https://www.fishcareai.com/tools/fish-feeding-calculator/">Feeding Calculator</a>
-      <a href="https://www.fishcareai.com/tools/aquarium-planner/">Aquarium Planner</a>
-    </div>
-    <div class="ftcol">
-      <h5>Company</h5>
-      <a href="https://www.fishcareai.com/about/">About</a>
-      <a href="https://www.fishcareai.com/contact/">Contact</a>
-      <a href="https://www.fishcareai.com/privacy/">Privacy Policy</a>
-      <a href="https://www.fishcareai.com/terms/">Terms</a>
-      <a href="https://www.fishcareai.com/editorial-policy/">Editorial Policy</a>
-    </div>
-  </div>
-  <div class="ftb">© 2026 EverTrend LLC. FishCare AI is a product of EverTrend LLC. All rights reserved.</div>
-  <nav class="ft-legal" aria-label="Legal and company information">
-    <a href="https://www.fishcareai.com/about/">About</a>
-    <a href="https://www.fishcareai.com/contact/">Contact</a>
-    <a href="https://www.fishcareai.com/editorial-policy/">Editorial Policy</a>
-    <a href="https://www.fishcareai.com/privacy/">Privacy</a>
-    <a href="https://www.fishcareai.com/image-credits/">Image Credits</a>
-  </nav>
-</footer>
+<footer class="ft"><div class="con"><div class="ftg"><div class="ftbr"><a class="logo" href="/" aria-label="FishCare AI home"><img class="fishcare-footer-logo-img" src="/assets/fishcare-logo.svg" alt="FishCare AI" width="158" height="40" loading="lazy"></a><p>Practical aquarium care guides, fish encyclopedia, and free tools for freshwater and saltwater fishkeepers.</p></div><div class="ftcol"><h3>Explore</h3><a href="/guides/">All Guides</a><a href="/species">Encyclopedia</a><a href="/compatibility/">Compatibility Guides</a><a href="/fish-health/">Fish Health</a><a href="/aquarium-fish-diseases/clownfish/">Clownfish Health Problems</a><a href="/identify/">Fish Identification</a><a href="/calculators/">Tank Size Calculators</a></div><div class="ftcol"><h3>Aquarium Tools</h3><a href="/tools/aquarium-size-calculator/">Tank Size Calculator</a><a href="/tools/fish-tank-stocking-calculator/">Stocking Calculator</a><a href="/tools/fish-compatibility-checker/">Compatibility Checker</a><a href="/tools/water-parameter-checker/">Water Parameter Checker</a><a href="/tools/betta-fish-water-parameters/">Betta Water Parameters</a><a href="/tools/fish-feeding-calculator/">Feeding Calculator</a><a href="/tools/aquarium-substrate-calculator/">Substrate Calculator</a><a href="/tools/aquarium-equipment-calculator/">Equipment Calculator</a><a href="/tools/aquarium-planner/">Aquarium Planner</a></div><div class="ftcol"><h3>Koi &amp; Pond Tools</h3><a href="/tools/koi-pond-calculator/">Koi Pond Calculator</a><a href="/tools/koi-pond-stocking-calculator/">Pond Stocking Calculator</a><a href="/tools/koi-feeding-calculator/">Koi Feeding Calculator</a><a href="/tools/koi-pond-liner-calculator/">Pond Liner Calculator</a><a href="/tools/koi-pond-pump-calculator/">Pond Pump Calculator</a><a href="/tools/koi-pond-salt-calculator/">Pond Salt Calculator</a></div><div class="ftcol"><h3>Company</h3><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/editorial-policy/">Editorial Policy</a><a href="/resources/">Resources</a><a href="/add-your-site/">Add Your Site</a><a href="https://buymeacoffee.com/vikiyananw6">☕ Buy me a coffee</a></div></div><div class="ftb">© 2026 EverTrend LLC. FishCare AI is a product of EverTrend LLC. All rights reserved.</div><nav class="legal-links" aria-label="Legal and company information"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/editorial-policy/">Editorial Policy</a><a href="/privacy/">Privacy</a><a href="/image-credits/">Image Credits</a><a href="/add-your-site/">Add Your Site</a></nav></div></footer>
 <script>
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -287,19 +139,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
   });
 });
-</script>
-<script>
-(function(){
-  var btn=document.getElementById('fc-hbg');
-  var links=document.getElementById('fc-nlinks');
-  var nav=document.getElementById('fishcare-nav');
-  if(!btn||!links)return;
-  function openMenu(){links.classList.add('open');btn.classList.add('hbg-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Close navigation menu');}
-  function closeMenu(){links.classList.remove('open');btn.classList.remove('hbg-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open navigation menu');}
-  btn.addEventListener('click',function(){links.classList.contains('open')?closeMenu():openMenu();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-  document.addEventListener('click',function(e){if(nav&&!nav.contains(e.target))closeMenu();});
-})();
 </script>
 </body>
 </html>
