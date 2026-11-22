@@ -165,10 +165,17 @@ async function turnstileToken() {
   if (MOCK || !CONFIG.turnstileSiteKey) return MOCK ? 'mock-turnstile' : undefined;
   const ts = await loadTurnstile();
   return new Promise((resolve, reject) => {
-    const timer = setTimeout(() => { turnstilePending = null; reject(new Error('turnstile_timeout')); }, 30000);
+    let timer = null;
+    const arm = (ms) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { turnstilePending = null; reject(new Error('turnstile_timeout')); }, ms);
+    };
+    arm(30000);
     turnstilePending = {
       resolve: (t) => { clearTimeout(timer); turnstilePending = null; resolve(t); },
       reject: (e) => { clearTimeout(timer); turnstilePending = null; reject(e); },
+      // Cloudflare wants a click: give the person time to do it.
+      interactive: () => { arm(5 * 60 * 1000); els.spinner.textContent = 'Tick the security check above to continue…'; },
     };
     if (turnstileWidget === null) {
       // execution:'execute' + appearance:'interaction-only' keeps it invisible
@@ -178,7 +185,8 @@ async function turnstileToken() {
         execution: 'execute',
         appearance: 'interaction-only',
         callback: (t) => turnstilePending && turnstilePending.resolve(t),
-        'error-callback': () => turnstilePending && turnstilePending.reject(new Error('turnstile_error')),
+        'error-callback': () => { if (turnstilePending) turnstilePending.reject(new Error('turnstile_error')); return true; },
+        'before-interactive-callback': () => turnstilePending && turnstilePending.interactive(),
       });
     } else {
       ts.reset(turnstileWidget); // tokens are single-use
@@ -410,6 +418,7 @@ async function handleFile(file) {
 async function identify(photo, retried) {
   if (!photo || busy) return;
   busy = true;
+  els.spinner.textContent = 'Identifying your fish…';
   show(els.spinner, true); show(els.errorBox, false); show(els.results, false);
   if (!retried) track('identify_start', { source: 'web' });
   let res;
