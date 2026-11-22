@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-global-chrome="false">
+<html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>What Fish Is This? Free AI Fish Identifier | FishCare AI</title>
-<meta name="description" content="What fish is this? Upload a photo and find out in seconds — free AI fish identification across 866 freshwater and saltwater species, no account needed."/>
+<meta name="description" content="What fish is this? Upload a photo and find out in seconds — free AI fish identification for freshwater, saltwater and pond fish, with the species name, scientific name and care tips."/>
 <link rel="canonical" href="https://www.fishcareai.com/identify/"/>
 <meta name="theme-color" content="#0a1628"/>
 <link rel="preconnect" href="https://www.fishcareai.com" crossorigin/>
@@ -12,173 +12,18 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="FishCare AI"/>
 <meta property="og:title" content="What Fish Is This? Free AI Fish Identifier"/>
-<meta property="og:description" content="Upload a photo to identify a fish in seconds — species name, scientific name and confidence score. Free AI fish identification for freshwater and saltwater fish."/>
+<meta property="og:description" content="Upload a photo to identify a fish in seconds — species name, scientific name and confidence rating. Free AI fish identification for freshwater and saltwater fish."/>
 <meta property="og:url" content="https://www.fishcareai.com/identify/"/>
 <meta property="og:image" content="https://www.fishcareai.com/assets/freshwater-fish-care-hero-optimized.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="What Fish Is This? Free AI Fish Identifier"/>
-<meta name="twitter:description" content="Upload a photo to identify a fish in seconds — species name, scientific name and confidence score. Free AI fish identification for freshwater and saltwater fish."/>
+<meta name="twitter:description" content="Upload a photo to identify a fish in seconds — species name, scientific name and confidence rating. Free AI fish identification for freshwater and saltwater fish."/>
 <meta name="twitter:image" content="https://www.fishcareai.com/assets/freshwater-fish-care-hero-optimized.jpg"/>
-<style>
-/* ── FishCare AI Global Navigation ─────────────────────────────────────── */
-.nb{position:sticky;top:0;z-index:100;background:rgba(5,31,50,.92);border-bottom:1px solid rgba(125,235,255,.16);box-shadow:0 16px 50px rgba(0,0,0,.28);backdrop-filter:blur(22px) saturate(1.25);-webkit-backdrop-filter:blur(22px) saturate(1.25);padding:0 22px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:8px;text-decoration:none}
-.fishcare-logo-img{height:36px;width:142px;object-fit:contain;display:block;filter:drop-shadow(0 10px 24px rgba(37,215,255,.22))}
-.nlinks{display:flex;align-items:center;gap:2px}
-.nl{display:flex;align-items:center;padding:7px 13px;border-radius:999px;font-weight:500;font-size:.86rem;line-height:1;color:rgba(234,251,255,.82);text-decoration:none;transition:all .15s;background:none;border:none;cursor:pointer;white-space:nowrap}
-.nl:visited{color:rgba(234,251,255,.82)}
-.nl:hover,.nl.act{color:#fff;background:rgba(125,235,255,.15);box-shadow:inset 0 0 0 1px rgba(125,235,255,.22)}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:7px;border:none;background:none}
-.hbg span{display:block;width:21px;height:2px;background:#fff;border-radius:2px;transition:all .2s}
-.hbg-open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hbg-open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.hbg-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(max-width:760px){
-  .nlinks{display:none;position:absolute;top:calc(100% + 4px);left:10px;right:10px;background:rgba(4,22,36,.97);border:1px solid rgba(125,235,255,.2);border-radius:18px;flex-direction:column;padding:14px;gap:4px;box-shadow:0 20px 60px rgba(0,0,0,.5);max-height:calc(100vh - 80px);overflow-y:auto}
-  .nlinks.open{display:flex}
-  .hbg{display:flex}
-  .nlinks .nl{color:rgba(234,251,255,.82);width:100%}
-  .nlinks .nl:hover,.nlinks .nl.act{color:#fff;background:rgba(125,235,255,.15);box-shadow:inset 0 0 0 1px rgba(125,235,255,.22)}
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a1628;--card:#0f2040;--card2:#152a50;
-  --accent:#1e9aff;--accent2:#00c9a7;
-  --text:#e8f4ff;--muted:#7da8cc;--border:#1e3a60;
-  --ok:#27ae60;--warn:#f39c12;--radius:14px;
-}
-body{font-family:-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.5}
-a{color:var(--accent)}
-
-/* ── Header ── */
-
-
-
-
-
-
-
-@media(max-width:700px){}
-
-/* ── Main layout ── */
-main{max-width:960px;margin:0 auto;padding:32px 20px}
-
-/* ── Breadcrumb ── */
-.crumbs{font-size:.78rem;color:var(--muted);margin-bottom:18px}
-.crumbs a{color:var(--muted);text-decoration:none}
-.crumbs a:hover{color:var(--accent)}
-.crumbs span[aria-current]{color:var(--text)}
-
-/* ── Hero ── */
-.hero{text-align:center;padding:44px 24px 36px;background:linear-gradient(180deg,rgba(30,154,255,.07),transparent);border-radius:var(--radius);margin-bottom:28px;border:1px solid var(--border)}
-.hero h1{font-size:2rem;font-weight:900;color:#fff;margin-bottom:14px;line-height:1.2}
-.hero p{font-size:1rem;color:var(--muted);max-width:660px;margin:0 auto;line-height:1.65}
-
-/* ── Editorial content ── */
-section.content-section{margin-bottom:40px}
-section.content-section h2{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}
-section.content-section h3{font-size:1rem;font-weight:700;color:#fff;margin:20px 0 6px}
-section.content-section p{color:var(--muted);margin-bottom:12px;line-height:1.7}
-section.content-section ul,section.content-section ol{padding-left:20px;color:var(--muted);margin-bottom:12px}
-section.content-section li{margin-bottom:8px;line-height:1.65}
-section.content-section strong{color:var(--text)}
-section.content-section em{color:#a0c0e0}
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
-.id-chart{width:100%;border-collapse:collapse;font-size:.85rem;min-width:560px}
-.id-chart th{background:var(--card2);color:var(--text);padding:10px 12px;text-align:left;font-weight:700;border:1px solid var(--border)}
-.id-chart td{padding:9px 12px;border:1px solid var(--border);color:var(--muted);vertical-align:top}
-.id-chart tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.id-chart td strong{color:var(--text)}
-.id-chart td em{color:#8ab8d8;font-style:italic}
-.steps{list-style:none;padding:0;counter-reset:step}
-.steps li{counter-increment:step;position:relative;padding-left:44px;margin-bottom:16px;color:var(--muted);line-height:1.65}
-.steps li::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#0070cc);color:#fff;font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center}
-.steps li strong{display:block;color:#fff;margin-bottom:2px}
-.callout{background:rgba(243,156,18,.08);border:1px solid rgba(243,156,18,.28);border-left-width:3px;border-radius:10px;padding:14px 18px;color:var(--muted);font-size:.88rem;line-height:1.65}
-.callout strong{color:#f0b940}
-.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
-.faq-item:last-child{border-bottom:none}
-.faq-item h3{margin:0 0 6px;font-size:.98rem;font-weight:700;color:#fff}
-.faq-item p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.7}
-.related-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
-.related-links span{color:var(--muted);font-size:.82rem}
-.related-links a{padding:5px 14px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:.8rem;text-decoration:none}
-.related-links a:hover{color:var(--accent);border-color:rgba(30,154,255,.4)}
-@media(max-width:600px){.hero h1{font-size:1.5rem}}
-
-/* ── Upload zone ── */
-.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:48px 24px;text-align:center;cursor:pointer;transition:all .2s;background:rgba(30,154,255,.04)}
-.upload-zone:hover,.upload-zone.drag{border-color:var(--accent);background:rgba(30,154,255,.1)}
-.upload-zone .icon{font-size:3rem;margin-bottom:14px}
-.upload-zone h2{font-size:1.1rem;color:#fff;margin-bottom:8px}
-.upload-zone p{font-size:.85rem;color:var(--muted);margin-bottom:20px}
-.upload-btn{display:inline-block;padding:10px 28px;border-radius:999px;background:linear-gradient(135deg,var(--accent),#0070cc);color:#fff;font-weight:700;font-size:.9rem;cursor:pointer;border:none;box-shadow:0 8px 24px rgba(30,154,255,.3)}
-.upload-btn:hover{opacity:.88}
-#file-input{display:none}
-
-/* ── Preview & loading ── */
-.preview-wrap{display:none;position:relative;border-radius:var(--radius);overflow:hidden;background:var(--card);margin-bottom:24px;border:1px solid var(--border)}
-.preview-wrap img{width:100%;height:auto;max-height:420px;object-fit:contain;display:block}
-.preview-wrap .change-btn{position:absolute;top:12px;right:12px;padding:6px 14px;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:.78rem;font-weight:600;cursor:pointer;border:1px solid rgba(255,255,255,.2)}
-
-.spinner{display:none;text-align:center;padding:40px;font-size:.9rem;color:var(--muted)}
-.spinner::before{content:'';display:block;width:42px;height:42px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;margin:0 auto 16px;animation:spin .8s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* ── Results ── */
-.results{display:none}
-.results-header{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.results-header h2{font-size:1.15rem;font-weight:700}
-.results-header small{color:var(--muted);font-size:.8rem}
-
-.fish-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:16px;overflow:hidden}
-.fish-card-header{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--card2);border-bottom:1px solid var(--border)}
-.fish-card-header strong{color:#fff;font-size:.95rem}
-.det-badge{background:rgba(30,154,255,.18);color:var(--accent);padding:3px 10px;border-radius:999px;font-size:.75rem;font-weight:700;margin-left:auto}
-
-.species-list{padding:16px}
-.species-item{display:grid;grid-template-columns:80px 1fr;gap:14px;padding:14px;border-radius:10px;margin-bottom:10px;background:rgba(255,255,255,.03);border:1px solid var(--border);transition:border-color .2s}
-.species-item:hover{border-color:rgba(30,154,255,.4)}
-.species-item:last-child{margin-bottom:0}
-.species-photo{width:80px;height:60px;border-radius:8px;object-fit:cover;background:#0a1628;flex-shrink:0}
-.species-photo.placeholder{display:flex;align-items:center;justify-content:center;font-size:2rem;background:var(--card2)}
-.species-info{}
-.species-name{font-weight:700;color:#fff;font-size:.95rem;margin-bottom:2px}
-.species-sci{font-style:italic;color:var(--muted);font-size:.78rem;margin-bottom:6px}
-.species-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
-.badge{padding:2px 9px;border-radius:999px;font-size:.72rem;font-weight:600}
-.acc-badge{background:rgba(39,174,96,.18);color:#4cd08a}
-.acc-badge.mid{background:rgba(243,156,18,.18);color:#f0b940}
-.acc-badge.low{background:rgba(108,117,125,.18);color:var(--muted)}
-.tag-badge{background:rgba(30,154,255,.1);color:var(--muted);border:1px solid var(--border)}
-.species-desc{font-size:.78rem;color:var(--muted);line-height:1.5}
-
-.no-fish{padding:32px;text-align:center;color:var(--muted)}
-
-/* ── Error ── */
-.error-box{display:none;background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.3);border-radius:var(--radius);padding:18px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem}
-
-/* ── Footer ── */
-footer{text-align:center;padding:28px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--border);margin-top:40px}
-
-@media(max-width:540px){
-  .species-item{grid-template-columns:64px 1fr;gap:10px}
-  .species-photo{width:64px;height:48px}
-}
-footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14);padding:48px 22px 28px;margin-top:40px}
-.ftg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px;max-width:1040px;margin:0 auto 28px}
-.ftbr .logo{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:10px}
-.ftbr p{font-size:.82rem;color:rgba(125,185,220,.7);line-height:1.6}
-.ftcol h5{font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(125,185,220,.5);margin-bottom:12px}
-.ftcol a{display:block;font-size:.84rem;color:rgba(125,185,220,.75);text-decoration:none;margin-bottom:8px;transition:color .15s}
-.ftcol a:hover{color:#fff}
-.ftb{max-width:1040px;margin:0 auto 12px;font-size:.78rem;color:rgba(125,185,220,.45);border-top:1px solid rgba(125,235,255,.1);padding-top:20px}
-.ft-legal{max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px}
-.ft-legal a{font-size:.76rem;color:rgba(125,185,220,.55);text-decoration:none}
-.ft-legal a:hover{color:rgba(125,185,220,.9)}
-@media(max-width:700px){.ftg{grid-template-columns:1fr 1fr}}
-@media(max-width:440px){.ftg{grid-template-columns:1fr}}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://www.fishcareai.com/assets/site-chrome.css">
+<link rel="stylesheet" href="/identify/assets/identify.css?v=20261122">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -192,7 +37,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
     "Identify a Fish From a Photo"
   ],
   "url": "https://www.fishcareai.com/identify/",
-  "description": "Free AI fish identifier. Upload a photo of a fish and get the species name, scientific name, family and a confidence score in seconds, across 866 freshwater and saltwater species.",
+  "description": "Free AI fish identifier. Upload a photo of a fish and get the most likely species, its scientific name, a confidence rating and care tips in seconds, for freshwater and saltwater fish.",
   "applicationCategory": "UtilitiesApplication",
   "applicationSubCategory": "Fish identification",
   "operatingSystem": "Any modern web browser",
@@ -206,9 +51,10 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
   },
   "featureList": [
     "Identify fish species from a photo",
-    "Detect and identify multiple fish in one image",
-    "Scientific name, common names, family and order for each match",
-    "Confidence score for every species match",
+    "Up to three candidate species per photo, most likely first",
+    "Common and scientific name with care tips for the top match",
+    "High, Moderate or Limited confidence rating for every match",
+    "Save the identified fish to your tank in the FishCare AI app",
     "Covers freshwater, saltwater and reef fish"
   ],
   "publisher": {
@@ -233,7 +79,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       "name": "Can I really find out what fish this is from just a photo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. A clear side-on photo is normally enough to get a species-level answer. The model was trained on photographs rather than on museum specimens, so ordinary phone pictures of aquarium fish and freshly caught fish are exactly what it expects."
+        "text": "Yes. A clear side-on photo is normally enough to get a species-level answer, and ordinary phone pictures of aquarium fish, pond fish and freshly caught fish work well."
       }
     },
     {
@@ -241,7 +87,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       "name": "Is this fish identifier free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, it is free and there is no account, sign-up or app download. Upload a photo and you get the result."
+        "text": "Yes. Your first identifications are free with no sign-up or app download. A free FishCare AI account adds more every month (shared with the FishCare AI app), and Plus removes the limit. The page shows how many you have left."
       }
     },
     {
@@ -249,7 +95,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       "name": "How accurate is AI fish identification?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The underlying classifier reports 93.22% top-1 accuracy across 866 species on its benchmark set. Real-world accuracy is lower and depends heavily on photo quality, angle and lighting. Treat matches above 70% confidence as reliable, 40–70% as a shortlist, and anything below 40% as a guess."
+        "text": "Each result comes with up to three candidate species and a High, Moderate or Limited confidence rating. Accuracy depends heavily on photo quality, angle and lighting: treat High as a reliable answer, Moderate as a shortlist to check against a care guide, and Limited as a guess. Retake the photo side-on before relying on a Limited match."
       }
     },
     {
@@ -257,7 +103,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       "name": "What kind of fish is this — freshwater or saltwater?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The result tells you. Each match returns the family and order alongside the species name, and the species description notes the habitat. The database covers both freshwater and marine fish, so you do not need to know which you have before uploading."
+        "text": "The result tells you. The top match comes with its scientific name and care tips that say what water it needs, and the identifier covers freshwater, marine and pond fish, so you do not need to know which you have before uploading."
       }
     },
     {
@@ -273,7 +119,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       "name": "Can it identify more than one fish in the same photo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The detector locates each fish in the frame and returns a separate ranked set of species matches for every one it finds, each with its own detection confidence."
+        "text": "Crop to one fish for the best answer. The identifier names the most prominent fish in the photo; for a mixed tank, take one photo per species."
       }
     },
     {
@@ -319,70 +165,72 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
 </head>
 <body>
 
-<nav class="nb" id="fishcare-nav">
-  <a class="brand" href="https://www.fishcareai.com/">
-    <img class="fishcare-logo-img" src="https://www.fishcareai.com/assets/fishcare-logo.svg" alt="FishCare AI" width="142" height="36">
-  </a>
-    <div class="nlinks" id="fc-nlinks">
-    <a class="nl" href="https://www.fishcareai.com/">Home</a>
-    <a class="nl" href="https://www.fishcareai.com/guides/">Guides</a>
-    <a class="nl" href="https://www.fishcareai.com/tools/">Tools</a>
-    <a class="nl" href="https://www.fishcareai.com/species/">Encyclopedia</a>
-    <a class="nl" href="https://www.fishcareai.com/aquarium-fish-diseases/">Fish Diseases</a>
-    <a class="nl act" aria-current="page" href="https://www.fishcareai.com/identify/">Fish Identify</a>
-    <a class="nl" href="https://www.fishcareai.com/about/">About</a>
-  </div>
-  <button class="hbg hbg-btn" id="fc-hbg" aria-label="Toggle navigation" aria-expanded="false" type="button">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+<nav class="nb fishcare-global-nav" id="fishcare-global-navigation" aria-label="Main navigation"><a class="brand" href="/" aria-label="FishCare AI home"><img class="fishcare-logo-img" src="/assets/fishcare-logo.svg" alt="FishCare AI" width="142" height="36"></a><div class="nlinks" id="fishcare-nlinks"><a class="nl" href="/">Home</a><a class="nl" href="/guides/">Guides</a><a class="nl" href="/species">Encyclopedia</a><a class="nl" href="/compatibility/">Compatibility</a><a class="nl" href="/fish-health/">Fish Health</a><a class="nl act" href="/identify/" aria-current="page">Fish ID</a><a class="nl" href="/about/">About</a><a class="nl nl-app-btn" href="/app/">📱 App</a></div><button type="button" class="hbg" aria-label="Open navigation menu" aria-controls="fishcare-nlinks" aria-expanded="false"><span></span><span></span><span></span></button></nav>
 
-<main>
+<main class="id-home">
   <nav class="crumbs" aria-label="Breadcrumb">
-    <a href="https://www.fishcareai.com/">FishCare AI</a> &rsaquo; <span aria-current="page">What Fish Is This?</span>
+    <a href="/">FishCare AI</a> &rsaquo; <span aria-current="page">What Fish Is This?</span>
   </nav>
 
-  <header class="hero">
-    <h1>What Fish Is This? Identify a Fish From a Photo</h1>
-    <p>"What fish is this?" is the question this page answers. Drop the picture below and free AI fish identification returns the most likely species, its scientific name and a confidence score in a few seconds — for aquarium fish, reef fish and fish you have just caught. Free, no account, no app to install.</p>
-  </header>
+  <section class="id-hero">
+    <header class="id-hero-copy">
+      <p class="eyebrow">Free AI fish identifier</p>
+      <h1><em>What Fish Is This?</em> Identify a Fish From a Photo</h1>
+      <p>"What fish is this?" is the question this page answers. Add your picture and free AI fish identification returns the most likely species, its scientific name and a confidence rating in a few seconds — for aquarium fish, reef fish and fish you have just caught. Free to try with no sign-up and no app to install.</p>
+      <div class="chips"><span class="chip">Free to try</span><span class="chip">Freshwater &amp; saltwater</span><span class="chip">Care tips included</span><span class="chip">Saves to the app</span></div>
+      <div class="id-samples" aria-hidden="true">
+        <img src="/identify/assets/chart/clownfish.jpg" alt="" width="96" height="72" loading="lazy">
+        <img src="/identify/assets/chart/blue-tang.jpg" alt="" width="96" height="72" loading="lazy">
+        <img src="/identify/assets/chart/goldfish.jpg" alt="" width="96" height="72" loading="lazy">
+      </div>
+    </header>
 
-  <!-- Upload zone -->
-  <div class="upload-zone" id="drop-zone">
-    <div class="icon">📷</div>
-    <h2>Drop a photo here to identify your fish</h2>
-    <p>Supports JPEG, PNG, WebP · Max 10 MB</p>
-    <label for="file-input" class="upload-btn">Choose Photo</label>
-    <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp,image/gif"/>
-  </div>
+    <div class="id-tool">
+      <!-- Upload zone -->
+      <div class="upload-zone" id="drop-zone">
+        <div class="icon">📷</div>
+        <h2>Drop a photo here to identify your fish</h2>
+        <p>Take a photo or choose one from your library &middot; a clear side-on shot works best</p>
+        <div class="fc-actions fc-center">
+          <label for="camera-input" class="upload-btn">Take Photo</label>
+          <label for="file-input" class="upload-btn fc-secondary">Choose Photo</label>
+        </div>
+        <input type="file" id="camera-input" accept="image/*" capture="environment"/>
+        <input type="file" id="file-input" accept="image/*"/>
+      </div>
+      <p class="fc-quota" id="fc-quota" style="display:none" aria-live="polite"></p>
+      <p class="fc-demo" id="fc-demo" style="display:none">Demo mode &mdash; showing sample results while the new identifier is being connected.</p>
+      <div id="fc-turnstile" class="fc-turnstile"></div>
+      <p class="fc-privacy">Photos go to Google Gemini only to identify the fish and are not stored long term. <a href="/privacy/#photo-identification">Privacy</a></p>
 
-  <!-- Image preview -->
-  <div class="preview-wrap" id="preview-wrap">
-    <img id="preview-img" alt="Your uploaded photo — what fish is this? AI fish identification result" width="640" height="480"/>
-    <button class="change-btn" onclick="reset()">✕ Change photo</button>
-  </div>
+      <!-- Image preview -->
+      <div class="preview-wrap" id="preview-wrap">
+        <img id="preview-img" alt="Your uploaded photo — what fish is this? AI fish identification result" width="640" height="480"/>
+        <button class="change-btn" id="change-btn" type="button">✕ Change photo</button>
+      </div>
 
-  <!-- Spinner -->
-  <div class="spinner" id="spinner">Analyzing with Fishial AI model…</div>
+      <!-- Spinner -->
+      <div class="spinner" id="spinner" style="display:none">Identifying your fish…</div>
 
-  <!-- Error -->
-  <div class="error-box" id="error-box"></div>
+      <!-- Error -->
+      <div class="error-box" id="error-box"></div>
 
-  <!-- Results -->
-  <div class="results" id="results">
-    <div class="results-header">
-      <h2>Identification Results</h2>
-      <small id="model-info"></small>
+      <!-- Results -->
+      <div class="results" id="results">
+        <div class="results-header">
+          <h2>Identification result</h2>
+        </div>
+        <div id="results-body"></div>
+      </div>
     </div>
-    <div id="results-body"></div>
-  </div>
+  </section>
 
   <section class="content-section">
     <h2>How the fish identifier works</h2>
     <ol class="steps">
-      <li><strong>Upload the photo</strong>Drag a JPEG, PNG or WebP into the box above, or pick one from your phone. Nothing is published — the image is sent for recognition and the result is returned to your browser.</li>
-      <li><strong>The detector finds each fish</strong>A YOLO-based detection model locates every fish in the frame and reports how confident it is that each one is a fish. A photo with three fish in it returns three separate results.</li>
-      <li><strong>The classifier names the species</strong>Each detected fish is matched against the species database. You get the top matches ranked by confidence, with the common name, the scientific name, the family and order, and a short description.</li>
+      <li><strong>Take or upload the photo</strong>Snap the fish with your phone camera or pick a picture from your library. Your browser shrinks it before sending, so even large phone photos upload quickly. Nothing is published.</li>
+      <li><strong>The AI looks for a fish</strong>The image is checked for a fish and for photo quality. If no fish is visible you are told straight away, so you can retake the shot.</li>
+      <li><strong>You get the species</strong>The top match comes back with its common name, scientific name, a confidence rating and care tips, with up to two alternatives. Save it to your tank in the FishCare AI app with one tap.</li>
     </ol>
     <p>The whole round trip normally takes two to five seconds. If nothing is detected, the answer to &ldquo;what fish is this&rdquo; is usually hiding behind a photo problem rather than a rare species — the next section covers that.</p>
   </section>
@@ -395,10 +243,10 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       <li><strong>Keep the dorsal and tail fins in frame.</strong> Fin shape separates species that otherwise look identical. A cropped tail throws away that signal.</li>
       <li><strong>Fill at least a third of the frame.</strong> A fish that is 40 pixels wide in a wide tank shot carries almost no detail to classify.</li>
       <li><strong>Kill the glare.</strong> Turn off the flash, shoot straight at the glass rather than at an angle, and avoid heavy blue or actinic lighting — colour casts shift the match badly on reef fish.</li>
-      <li><strong>One fish per photo where you can.</strong> Multiple fish work, but a single clear subject gives the cleanest confidence score.</li>
+      <li><strong>One fish per photo where you can.</strong> Multiple fish work, but a single clear subject gives the cleanest answer.</li>
       <li><strong>For a caught fish, keep it wet and use a plain background.</strong> Dry, faded colour and a busy background of grass or gravel both reduce accuracy.</li>
     </ul>
-    <p class="callout"><strong>Reading the confidence score:</strong> a match above 70% is usually reliable. Between 40% and 70%, treat it as a shortlist and confirm against the species guide. Below 40% the model is guessing — retake the photo from the side before you trust the name.</p>
+    <p class="callout"><strong>Reading the confidence rating:</strong> a High match is usually reliable. Moderate means a shortlist &mdash; confirm against the species guide. Limited means the model is guessing &mdash; retake the photo from the side before you trust the name.</p>
   </section>
 
   <section class="content-section">
@@ -426,8 +274,8 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
 
   <section class="content-section">
     <h2>What this fish identification tool covers</h2>
-    <p>Recognition runs on the <a href="https://github.com/fishial/Object-Detection-Model" rel="noopener">Fishial</a> open fish-recognition models. The current classifier is a DinoV2 + ViT architecture trained across <strong>866 species</strong>, reporting <strong>93.22% top-1 accuracy</strong> on Fishial&rsquo;s own benchmark set. Detection uses a YOLO-based fish detector, which is what allows several fish in one frame to be identified separately.</p>
-    <p>Coverage is strongest on North American, Caribbean and European species, popular marine reef fish, and the common freshwater aquarium trade. For each match you get the scientific name, alternative common names, family and order, and a short species description.</p>
+    <p>Recognition runs on Google&rsquo;s Gemini vision model through the FishCare AI service. It looks at body shape, fin placement, colour pattern and markings and returns up to three candidate species, most likely first, each with a High, Moderate or Limited confidence rating. When the top match is in the FishCare AI species library you can save it to your tank in the app with one tap.</p>
+    <p>Coverage spans the common freshwater aquarium trade, marine reef fish, pond fish such as koi and goldfish, and wild fish you have caught. For the top match you get the common and scientific name and a short list of care tips; the full care card lives in the app. Photos are sent to Google Gemini only to identify the fish &mdash; they are not used for model training and are not stored long term (see the <a href="https://www.fishcareai.com/privacy/#photo-identification">privacy policy</a>).</p>
     <h3>Where it struggles</h3>
     <ul>
       <li><strong>Selectively bred aquarium morphs.</strong> Fancy guppies, flowerhorn, blood parrot cichlids and heavily line-bred bettas often look nothing like the wild species the model learned.</li>
@@ -441,19 +289,19 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
     <h2>Frequently asked questions</h2>
     <div class="faq-item">
       <h3>Can I really find out what fish this is from just a photo?</h3>
-      <p>Yes. A clear side-on photo is normally enough to get a species-level answer. The model was trained on photographs rather than on museum specimens, so ordinary phone pictures of aquarium fish and freshly caught fish are exactly what it expects.</p>
+      <p>Yes. A clear side-on photo is normally enough to get a species-level answer, and ordinary phone pictures of aquarium fish, pond fish and freshly caught fish work well.</p>
     </div>
     <div class="faq-item">
       <h3>Is this fish identifier free?</h3>
-      <p>Yes, it is free and there is no account, sign-up or app download. Upload a photo and you get the result.</p>
+      <p>Yes. Your first identifications are free with no sign-up or app download. A free FishCare AI account adds more every month (shared with the FishCare AI app), and Plus removes the limit. The page shows how many you have left.</p>
     </div>
     <div class="faq-item">
       <h3>How accurate is AI fish identification?</h3>
-      <p>The underlying classifier reports 93.22% top-1 accuracy across 866 species on its benchmark set. Real-world accuracy is lower and depends heavily on photo quality, angle and lighting. Treat matches above 70% confidence as reliable, 40&ndash;70% as a shortlist, and anything below 40% as a guess.</p>
+      <p>Each result comes with up to three candidate species and a High, Moderate or Limited confidence rating. Accuracy depends heavily on photo quality, angle and lighting: treat High as a reliable answer, Moderate as a shortlist to check against a care guide, and Limited as a guess. Retake the photo side-on before relying on a Limited match.</p>
     </div>
     <div class="faq-item">
       <h3>What kind of fish is this &mdash; freshwater or saltwater?</h3>
-      <p>The result tells you. Each match returns the family and order alongside the species name, and the species description notes the habitat. The database covers both freshwater and marine fish, so you do not need to know which you have before uploading.</p>
+      <p>The result tells you. The top match comes with its scientific name and care tips that say what water it needs, and the identifier covers freshwater, marine and pond fish, so you do not need to know which you have before uploading.</p>
     </div>
     <div class="faq-item">
       <h3>Why does it say no fish detected?</h3>
@@ -461,7 +309,7 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
     </div>
     <div class="faq-item">
       <h3>Can it identify more than one fish in the same photo?</h3>
-      <p>Yes. The detector locates each fish in the frame and returns a separate ranked set of species matches for every one it finds, each with its own detection confidence.</p>
+      <p>Crop to one fish for the best answer. The identifier names the most prominent fish in the photo; for a mixed tank, take one photo per species.</p>
     </div>
     <div class="faq-item">
       <h3>Does it work on screenshots and photos taken through glass?</h3>
@@ -496,182 +344,23 @@ footer.ft{background:rgba(4,16,30,.95);border-top:1px solid rgba(125,235,255,.14
       <a href="https://www.fishcareai.com/aquarium-fish-diseases/">Fish diseases</a>
     </nav>
   </section>
+  <dialog class="fc-modal" id="fc-signup" aria-labelledby="fc-signup-title">
+    <form id="fc-signup-form" method="dialog" novalidate>
+      <button type="button" class="fc-close" id="fc-signup-close" aria-label="Close">✕</button>
+      <h2 id="fc-signup-title">Create your free FishCare AI account</h2>
+      <p id="fc-signup-lead"></p>
+      <label>Email<input type="email" name="email" autocomplete="email" required/></label>
+      <label>Password<input type="password" name="password" autocomplete="new-password" minlength="8" required/></label>
+      <button type="submit" class="upload-btn" id="fc-signup-submit">Create account</button>
+      <p class="fc-small" id="fc-signup-msg" aria-live="polite"></p>
+      <button type="button" class="fc-link-btn" id="fc-signup-mode">Already have an account? Sign in</button>
+      <p class="fc-small">By continuing you agree to the <a href="https://www.fishcareai.com/terms/">Terms</a> and <a href="https://www.fishcareai.com/privacy/">Privacy Policy</a>.</p>
+    </form>
+  </dialog>
 </main>
 
-<footer class="ft">
-  <div class="ftg">
-    <div class="ftbr">
-      <div class="logo">FishCare AI</div>
-      <p>AI fish identification and aquarium care guides for freshwater and saltwater fishkeepers.</p>
-    </div>
-    <div class="ftcol">
-      <h5>Explore</h5>
-      <a href="https://www.fishcareai.com/species/">Fish Species</a>
-      <a href="https://www.fishcareai.com/aquarium-fish-diseases/">Fish Diseases</a>
-      <a href="https://www.fishcareai.com/guides/">Guides</a>
-      <a href="https://www.fishcareai.com/tools/">Aquarium Tools</a>
-      <a href="https://www.fishcareai.com/identify/">Fish Identify</a>
-    </div>
-    <div class="ftcol">
-      <h5>Popular Tools</h5>
-      <a href="https://www.fishcareai.com/tools/fish-compatibility-checker/">Compatibility Checker</a>
-      <a href="https://www.fishcareai.com/tools/tank-size-calculator/">Tank Size Calculator</a>
-      <a href="https://www.fishcareai.com/tools/water-parameter-checker/">Water Parameters</a>
-      <a href="https://www.fishcareai.com/tools/fish-feeding-calculator/">Feeding Calculator</a>
-      <a href="https://www.fishcareai.com/tools/aquarium-planner/">Aquarium Planner</a>
-    </div>
-    <div class="ftcol">
-      <h5>Company</h5>
-      <a href="https://www.fishcareai.com/about/">About</a>
-      <a href="https://www.fishcareai.com/contact/">Contact</a>
-      <a href="https://www.fishcareai.com/privacy/">Privacy Policy</a>
-      <a href="https://www.fishcareai.com/terms/">Terms</a>
-      <a href="https://www.fishcareai.com/editorial-policy/">Editorial Policy</a>
-    </div>
-  </div>
-  <div class="ftb">© 2026 EverTrend LLC. FishCare AI is a product of EverTrend LLC. All rights reserved.</div>
-  <nav class="ft-legal" aria-label="Legal and company information">
-    <a href="https://www.fishcareai.com/about/">About</a>
-    <a href="https://www.fishcareai.com/contact/">Contact</a>
-    <a href="https://www.fishcareai.com/editorial-policy/">Editorial Policy</a>
-    <a href="https://www.fishcareai.com/privacy/">Privacy</a>
-    <a href="https://www.fishcareai.com/image-credits/">Image Credits</a>
-  </nav>
-</footer>
+<footer class="ft"><div class="con"><div class="ftg"><div class="ftbr"><a class="logo" href="/" aria-label="FishCare AI home"><img class="fishcare-footer-logo-img" src="/assets/fishcare-logo.svg" alt="FishCare AI" width="158" height="40" loading="lazy"></a><p>Practical aquarium care guides, fish encyclopedia, and free tools for freshwater and saltwater fishkeepers.</p></div><div class="ftcol"><h3>Explore</h3><a href="/guides/">All Guides</a><a href="/species">Encyclopedia</a><a href="/compatibility/">Compatibility Guides</a><a href="/fish-health/">Fish Health</a><a href="/aquarium-fish-diseases/clownfish/">Clownfish Health Problems</a><a href="/identify/">Fish Identification</a><a href="/calculators/">Tank Size Calculators</a></div><div class="ftcol"><h3>Aquarium Tools</h3><a href="/tools/aquarium-size-calculator/">Tank Size Calculator</a><a href="/tools/fish-tank-stocking-calculator/">Stocking Calculator</a><a href="/tools/fish-compatibility-checker/">Compatibility Checker</a><a href="/tools/water-parameter-checker/">Water Parameter Checker</a><a href="/tools/betta-fish-water-parameters/">Betta Water Parameters</a><a href="/tools/fish-feeding-calculator/">Feeding Calculator</a><a href="/tools/aquarium-substrate-calculator/">Substrate Calculator</a><a href="/tools/aquarium-equipment-calculator/">Equipment Calculator</a><a href="/tools/aquarium-planner/">Aquarium Planner</a></div><div class="ftcol"><h3>Koi &amp; Pond Tools</h3><a href="/tools/koi-pond-calculator/">Koi Pond Calculator</a><a href="/tools/koi-pond-stocking-calculator/">Pond Stocking Calculator</a><a href="/tools/koi-feeding-calculator/">Koi Feeding Calculator</a><a href="/tools/koi-pond-liner-calculator/">Pond Liner Calculator</a><a href="/tools/koi-pond-pump-calculator/">Pond Pump Calculator</a><a href="/tools/koi-pond-salt-calculator/">Pond Salt Calculator</a></div><div class="ftcol"><h3>Company</h3><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms</a><a href="/editorial-policy/">Editorial Policy</a><a href="/resources/">Resources</a><a href="/add-your-site/">Add Your Site</a><a href="https://buymeacoffee.com/vikiyananw6">☕ Buy me a coffee</a></div></div><div class="ftb">© 2026 EverTrend LLC. FishCare AI is a product of EverTrend LLC. All rights reserved.</div><nav class="legal-links" aria-label="Legal and company information"><a href="/about/">About</a><a href="/contact/">Contact</a><a href="/editorial-policy/">Editorial Policy</a><a href="/privacy/">Privacy</a><a href="/image-credits/">Image Credits</a><a href="/add-your-site/">Add Your Site</a></nav></div></footer>
 
-<script>
-const dropZone  = document.getElementById('drop-zone');
-const fileInput = document.getElementById('file-input');
-const previewWrap = document.getElementById('preview-wrap');
-const previewImg  = document.getElementById('preview-img');
-const spinner     = document.getElementById('spinner');
-const errorBox    = document.getElementById('error-box');
-const resultsDiv  = document.getElementById('results');
-const resultsBody = document.getElementById('results-body');
-const modelInfo   = document.getElementById('model-info');
-
-// Drag & drop
-['dragenter','dragover'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.add('drag'); }));
-['dragleave','drop'].forEach(e => dropZone.addEventListener(e, ev => { ev.preventDefault(); dropZone.classList.remove('drag'); }));
-dropZone.addEventListener('drop', ev => { const f = ev.dataTransfer.files[0]; if (f) handleFile(f); });
-fileInput.addEventListener('change', () => { if (fileInput.files[0]) handleFile(fileInput.files[0]); });
-
-function reset() {
-  dropZone.style.display = '';
-  previewWrap.style.display = 'none';
-  spinner.style.display = 'none';
-  resultsDiv.style.display = 'none';
-  errorBox.style.display = 'none';
-  fileInput.value = '';
-}
-
-function handleFile(file) {
-  if (!file.type.startsWith('image/')) return showError('Please select an image file.');
-  if (file.size > 10 * 1024 * 1024) return showError('File is too large (max 10 MB).');
-
-  // Show preview
-  const reader = new FileReader();
-  reader.onload = e => { previewImg.src = e.target.result; };
-  reader.readAsDataURL(file);
-  dropZone.style.display = 'none';
-  previewWrap.style.display = 'block';
-  spinner.style.display = 'block';
-  resultsDiv.style.display = 'none';
-  errorBox.style.display = 'none';
-
-  // Upload & identify
-  const fd = new FormData();
-  fd.append('image', file);
-  fetch('/identify/api/identify', { method: 'POST', body: fd })
-    .then(r => r.json())
-    .then(data => {
-      spinner.style.display = 'none';
-      if (data.error) return showError(data.error);
-      renderResults(data);
-    })
-    .catch(err => { spinner.style.display = 'none'; showError(err.message); });
-}
-
-function showError(msg) {
-  errorBox.textContent = '⚠️ ' + msg;
-  errorBox.style.display = 'block';
-}
-
-function accClass(pct) {
-  if (pct >= 70) return 'acc-badge';
-  if (pct >= 40) return 'acc-badge mid';
-  return 'acc-badge low';
-}
-
-function renderResults(data) {
-  if (data.modelVersion) modelInfo.textContent = `Model v${data.modelVersion} · ${data.fishes.length} fish detected`;
-
-  if (!data.fishes || data.fishes.length === 0) {
-    resultsBody.innerHTML = '<div class="no-fish">🔍 No fish detected in this image. Try a clearer photo with the fish more prominently in frame.</div>';
-    resultsDiv.style.display = 'block';
-    return;
-  }
-
-  resultsBody.innerHTML = data.fishes.map((fish, fi) => {
-    const topSpecies = fish.species && fish.species.length > 0 ? fish.species : null;
-    const detPct = fish.detectionScore ? Math.round(fish.detectionScore * 100) : null;
-
-    const speciesHtml = topSpecies ? topSpecies.map((s, si) => {
-      const photoHtml = s.photo
-        ? `<img class="species-photo" src="${escHtml(s.photo)}" alt="${escHtml(s.commonName)}" loading="lazy" onerror="this.outerHTML='<div class=\\'species-photo placeholder\\'>🐟</div>'">`
-        : `<div class="species-photo placeholder">🐟</div>`;
-
-      const commonNamesHtml = s.commonNames.slice(0,3).map(n => `<span class="badge tag-badge">${escHtml(n)}</span>`).join('');
-      const tagsHtml = [
-        s.family ? `<span class="badge tag-badge">${escHtml(s.family)}</span>` : '',
-        s.order  ? `<span class="badge tag-badge">${escHtml(s.order)}</span>`  : ''
-      ].join('');
-
-      return `
-        <div class="species-item">
-          ${photoHtml}
-          <div class="species-info">
-            <div class="species-name">${escHtml(s.commonName)}</div>
-            <div class="species-sci">${escHtml(s.scientificName)}</div>
-            <div class="species-meta">
-              <span class="${accClass(s.accuracy)}">${s.accuracy}% match</span>
-              ${commonNamesHtml}
-              ${tagsHtml}
-            </div>
-            ${s.description ? `<div class="species-desc">${escHtml(s.description)}</div>` : ''}
-          </div>
-        </div>`;
-    }).join('') : '<div style="padding:14px;color:var(--muted);font-size:.85rem">No species matched</div>';
-
-    return `
-      <div class="fish-card">
-        <div class="fish-card-header">
-          <strong>Fish ${fi + 1}</strong>
-          ${detPct ? `<span class="det-badge">Detection ${detPct}%</span>` : ''}
-        </div>
-        <div class="species-list">${speciesHtml}</div>
-      </div>`;
-  }).join('');
-
-  resultsDiv.style.display = 'block';
-}
-
-function escHtml(str) {
-  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-</script>
-<script>
-(function(){
-  var btn=document.getElementById('fc-hbg');
-  var links=document.getElementById('fc-nlinks');
-  var nav=document.getElementById('fishcare-nav');
-  if(!btn||!links)return;
-  function openMenu(){links.classList.add('open');btn.classList.add('hbg-open');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label','Close navigation menu');}
-  function closeMenu(){links.classList.remove('open');btn.classList.remove('hbg-open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Open navigation menu');}
-  btn.addEventListener('click',function(){links.classList.contains('open')?closeMenu():openMenu();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-  document.addEventListener('click',function(e){if(nav&&!nav.contains(e.target))closeMenu();});
-})();
-</script>
+<script type="module" src="/identify/assets/identify.js?v=20261122"></script>
 </body>
 </html>
