@@ -21,6 +21,9 @@ const CONFIG = {
   appStoreUrl: 'https://apps.apple.com/app/fishcare-ai/id6793299571',
   playUrl: 'https://play.google.com/store/apps/details?id=com.fishcareai.app',
   playLive: false, // keep in step with PLAY_LIVE in www assets/site-compliance.js
+  // True once the App Store build with fish identification and /open/species links
+  // (1.1.0) is live. Until then the buttons promise the app, not this saved result.
+  iosIdentifyLive: false,
 };
 
 const API_URL = CONFIG.supabaseUrl + '/functions/v1/fishcare-api/api/identify';
@@ -185,7 +188,10 @@ async function turnstileToken() {
         execution: 'execute',
         appearance: 'interaction-only',
         callback: (t) => turnstilePending && turnstilePending.resolve(t),
-        'error-callback': () => { if (turnstilePending) turnstilePending.reject(new Error('turnstile_error')); return true; },
+        'error-callback': (code) => {
+          if (turnstilePending) turnstilePending.reject(Object.assign(new Error('turnstile_error'), { code: String(code || '') }));
+          return true;
+        },
         'before-interactive-callback': () => turnstilePending && turnstilePending.interactive(),
       });
     } else {
@@ -273,7 +279,9 @@ async function mockIdentify() {
   const quota = () => ({ tier, used: s.used, limit, period: tier === 'guest' ? 'lifetime' : tier === 'member' ? 'month' : 'day', remaining: limit == null ? null : Math.max(0, limit - s.used) });
   const fail = (status, ai, nextStep) => ({ status, data: { ok: false, identification: null, quota: quota(), ai: { status: ai }, nextStep } });
 
-  if (MOCK_SCENARIO === 'budget') return fail(200, 'budget_paused', 'open_app');
+  if (MOCK_SCENARIO === 'budget') return fail(200, 'budget_paused', 'sign_up');
+  if (MOCK_SCENARIO === 'iplimit') return fail(200, 'ip_limited', 'sign_up');
+  if (MOCK_SCENARIO === 'plusday') return { status: 200, data: { ok: false, identification: null, quota: { tier: 'plus', used: 50, limit: 50, period: 'day', remaining: 0 }, ai: { status: 'quota_exhausted' }, nextStep: 'try_later' } };
   if (MOCK_SCENARIO === 'timeout') return fail(200, 'timeout');
   if (MOCK_SCENARIO === 'ratelimit') return { status: 429, data: { ok: false, identification: null, ai: { status: 'rate_limited' } } };
   if (MOCK_SCENARIO === 'turnstile') return { status: 403, data: { ok: false, identification: null, ai: { status: 'turnstile_failed' } } };
@@ -319,7 +327,8 @@ function renderQuota(q) {
 function confClass(c) { return c === 'High' ? 'acc-badge' : c === 'Moderate' ? 'acc-badge mid' : 'acc-badge low'; }
 
 function saveButton(speciesId) {
-  return `<a class="upload-btn fc-open-app" href="${esc(openAppUrl(speciesId))}" data-species="${esc(speciesId || '')}">Save this fish in the app</a>`;
+  const label = CONFIG.iosIdentifyLive ? 'Save this fish in the app' : 'Get the FishCare AI app';
+  return `<a class="upload-btn fc-open-app" href="${esc(openAppUrl(speciesId))}" data-species="${esc(speciesId || '')}">${label}</a>`;
 }
 
 function renderResult(ident, quota) {
@@ -365,7 +374,9 @@ function renderResult(ident, quota) {
           <div class="species-meta"><span class="${confClass(top.confidence)}">${esc(top.confidence)} confidence</span></div>
           ${quality}${tips}${notes}
           <div class="fc-actions">${saveButton(top.speciesId)}</div>
-          <p class="fc-small">Opens the FishCare AI app if it is installed; otherwise you will see the species page and app download links.${tier !== 'guest' ? ' The full care card is in the app.' : ''}</p>
+          <p class="fc-small">${CONFIG.iosIdentifyLive
+            ? `Opens the FishCare AI app if it is installed; otherwise you will see the species page and app download links.${tier !== 'guest' ? ' The full care card is in the app.' : ''}`
+            : 'The app keeps your tank, care reminders and health checks in one place.'}</p>
         </div>
         ${more}
       </div>
@@ -377,13 +388,30 @@ function renderExhausted(tier, nextStep) {
   track('identify_quota_exhausted', { tier });
   if (nextStep === 'sign_up' || tier === 'guest') {
     openSignup('quota');
-    showError('You have used your free identifications. <button type="button" class="fc-link-btn fc-signup-open">Create a free account</button> to get more every month.');
-    return;
+    return renderPanel('You&rsquo;ve used your free identifications',
+      'Create a free account to get more every month on this site and in the app.',
+      `<button type="button" class="upload-btn fc-signup-open">Create a free account</button>${storeButtons('identify-quota')}`);
   }
+  if (nextStep === 'try_later' || tier === 'plus') {
+    return renderPanel('You&rsquo;ve reached today&rsquo;s identification limit', 'It resets tomorrow. Thanks for using FishCare AI Plus.', '');
+  }
+  return renderPanel('You&rsquo;ve used this month&rsquo;s free identifications',
+    'Keep identifying in the FishCare AI app with the same account, or go unlimited with FishCare AI Plus.',
+    `<a class="upload-btn fc-open-app" href="${esc(openAppUrl(null))}" data-species="">Open the app</a>${storeButtons('identify-quota')}`);
+}
+
+function renderGuestLimit(reason, title) {
+  track('identify_quota_exhausted', { tier: 'guest', reason });
+  return renderPanel(title,
+    'Create a free account to keep identifying now. Free accounts get more identifications every month, here and in the app.',
+    `<button type="button" class="upload-btn fc-signup-open">Create a free account</button>${storeButtons('identify-limit')}`);
+}
+
+function renderPanel(title, lead, actions) {
   els.resultsBody.innerHTML = `<div class="fc-panel">
-    <strong>You&rsquo;ve used this month&rsquo;s free identifications</strong>
-    <p>Keep identifying in the FishCare AI app — your account and count carry over — or go unlimited with FishCare AI Plus.</p>
-    <div class="fc-actions"><a class="upload-btn fc-open-app" href="${esc(openAppUrl(null))}" data-species="">Open the app</a>${storeButtons('identify-quota')}</div>
+    <strong>${title}</strong>
+    <p>${lead}</p>
+    ${actions ? `<div class="fc-actions">${actions}</div>` : ''}
   </div>`;
   show(els.results, true);
 }
@@ -428,7 +456,12 @@ async function identify(photo, retried) {
     res = await callApi(photo, !user || user.isAnonymous);
   } catch (e) {
     busy = false; show(els.spinner, false);
-    if (String(e && e.message).startsWith('turnstile')) return showError('⚠️ We couldn&rsquo;t complete the quick security check. Please try again.', true);
+    if (String(e && e.message).startsWith('turnstile')) {
+      // turnstile_load = script blocked, turnstile_timeout = no answer, turnstile_error = Cloudflare error code.
+      track('identify_turnstile_fail', { reason: e.message, code: e.code || '' });
+      return showError('⚠️ We couldn&rsquo;t complete the quick security check. Please try again.', true);
+    }
+    track('identify_failed', { status: 'request_failed' });
     return showError('⚠️ Identification is temporarily unavailable. Please try again.', true);
   }
   busy = false; show(els.spinner, false);
@@ -454,7 +487,10 @@ async function identify(photo, retried) {
     return renderResult(ident, data.quota);
   }
   if (ai === 'quota_exhausted') return renderExhausted(tier, data.nextStep);
-  if (ai === 'budget_paused') return renderAppOnly('Today&rsquo;s web identifications are all used up. Continue in the FishCare AI app.');
+  // Both limits apply to guests only, so a free account keeps them identifying here.
+  if (ai === 'ip_limited') return renderGuestLimit(ai, 'Free guest identifications from this network are used up for today.');
+  if (ai === 'budget_paused') return renderGuestLimit(ai, 'Today&rsquo;s free guest identifications are all used up.');
+  track('identify_failed', { status: ai || 'http_' + res.status, tier });
   return showError('⚠️ Identification is temporarily unavailable. Please try again.', true);
 }
 
