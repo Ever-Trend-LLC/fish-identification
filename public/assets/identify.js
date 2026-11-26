@@ -22,8 +22,8 @@ const CONFIG = {
   playUrl: 'https://play.google.com/store/apps/details?id=com.fishcareai.app',
   playLive: false, // keep in step with PLAY_LIVE in www assets/site-compliance.js
   // True once the App Store build with fish identification and /open/species links
-  // (1.1.0) is live. Until then the buttons promise the app, not this saved result.
-  iosIdentifyLive: false,
+  // (1.1.0) is live (App Store 1.1.0, released 2026-11-24).
+  iosIdentifyLive: true,
 };
 
 const API_URL = CONFIG.supabaseUrl + '/functions/v1/fishcare-api/api/identify';
